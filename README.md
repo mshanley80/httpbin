@@ -1,31 +1,35 @@
-# httpbin(1): HTTP Request & Response Service
+# httpbin2022: HTTP Request & Response Service
 
 
-A [Kenneth Reitz](http://kennethreitz.org/bitcoin) Project.
+A [Kenneth Reitz](hhttp://httpbin.org ) Project.
 
-![ice cream](http://farm1.staticflickr.com/572/32514669683_4daf2ab7bc_k_d.jpg)
+Updated by [Michael Shanley](https://github.com/mshanley80/httpbin)
+
 
 Run locally:
+```shell
+cd to httpbin code root
+pip3 install .
+python3 httpbin/core.py --port <port> --host <host>
+Example:
+python3 httpbin/core.py --port 8080 --host 0.0.0.0
+```
+Run in docker:
 ```sh
-docker pull kennethreitz/httpbin
-docker run -p 80:80 kennethreitz/httpbin
+docker pull mshanley80/httpbin
+docker run -p 80:80 mshanley80/httpbin 
+where -p is docker_port:application_port
 ```
 
-See http://httpbin.org for more information.
+- Helm chart deployment - see deployments/helm-charts
+- Kubernetes deployment - see deployments/k8s
 
-## Officially Deployed at:
+## Deployed at:
 
-- http://httpbin.org
-- https://httpbin.org
-- https://hub.docker.com/r/kennethreitz/httpbin/
+- https://hub.docker.com/r/mshanley80/httpbin/
 
+- See the original project http://httpbin.org for more information.
 
 ## SEE ALSO
 
-- http://requestb.in
-- http://python-requests.org
-- https://grpcb.in/
-
-## Build Status
-
-[![Build Status](https://travis-ci.org/requests/httpbin.svg?branch=master)](https://travis-ci.org/requests/httpbin)
+- https://github.com/mshanley80/httpbin

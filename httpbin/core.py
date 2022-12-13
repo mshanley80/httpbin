@@ -29,28 +29,28 @@ from flask import (
 from six.moves import range as xrange
 from werkzeug.datastructures import WWWAuthenticate, MultiDict
 from werkzeug.http import http_date
-from werkzeug.wrappers import BaseResponse
+from werkzeug.wrappers import Response
 from werkzeug.http import parse_authorization_header
 from flasgger import Swagger, NO_SANITIZER
 
-from . import filters
-from .helpers import (
-    get_headers,
-    status_code,
-    get_dict,
-    get_request_range,
-    check_basic_auth,
-    check_digest_auth,
-    secure_cookie,
-    H,
-    ROBOT_TXT,
-    ANGRY_ASCII,
-    parse_multi_value_header,
-    next_stale_after_value,
-    digest_challenge_response,
+import filters
+from helpers import (
+     get_headers,
+     status_code,
+     get_dict,
+     get_request_range,
+     check_basic_auth,
+     check_digest_auth,
+     secure_cookie,
+     H,
+     ROBOT_TXT,
+     ANGRY_ASCII,
+     parse_multi_value_header,
+     next_stale_after_value,
+     digest_challenge_response,
 )
-from .utils import weighted_choice
-from .structures import CaseInsensitiveDict
+from utils import weighted_choice
+from structures import CaseInsensitiveDict
 
 with open(
     os.path.join(os.path.realpath(os.path.dirname(__file__)), "VERSION")
@@ -77,7 +77,7 @@ def jsonify(*args, **kwargs):
 
 
 # Prevent WSGI from correcting the casing of the Location header
-BaseResponse.autocorrect_location_header = False
+Response.autocorrect_location_header = False
 
 # Find the correct template folder when running from a different location
 tmpl_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "templates")
@@ -88,26 +88,20 @@ app.config["JSONIFY_PRETTYPRINT_REGULAR"] = True
 
 app.add_template_global("HTTPBIN_TRACKING" in os.environ, name="tracking_enabled")
 
-app.config["SWAGGER"] = {"title": "httpbin.org", "uiversion": 3}
+app.config["SWAGGER"] = {"title": "httpbin2022", "uiversion": 3}
 
 template = {
     "swagger": "2.0",
     "info": {
-        "title": "httpbin.org",
+        "title": "httpbin2022",
         "description": (
             "A simple HTTP Request & Response Service."
-            "<br/> <br/> <b>Run locally: </b> <code>$ docker run -p 80:80 kennethreitz/httpbin</code>"
+            "<br/> <br/> <b>Run locally: </b> <code>$ python3 httpbin/core.py --port 8080 --host 0.0.0.0</code> adjust port and host as needed"
+            "<br/> <br/> <b>Run locally in docker: </b> <code>$ docker run -p 80:80 mshanley80/httpbin</code> where -p is docker_port:application_port"
         ),
-        "contact": {
-            "responsibleOrganization": "Kenneth Reitz",
-            "responsibleDeveloper": "Kenneth Reitz",
-            "email": "me@kennethreitz.org",
-            "url": "https://kennethreitz.org",
-        },
-        # "termsOfService": "http://me.com/terms",
         "version": version,
     },
-    "host": "httpbin.org",  # overrides localhost:5000
+    "host": "localhost",  # overrides localhost:5000
     "basePath": "/",  # base bash for blueprint registration
     "schemes": ["https"],
     "protocol": "https",

@@ -1,9 +1,9 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
-LABEL name="httpbin"
-LABEL version="0.9.2"
+LABEL name="httpbin2020"
+LABEL version="0.10.0"
 LABEL description="A simple HTTP service."
-LABEL org.kennethreitz.vendor="Kenneth Reitz"
+LABEL org.michaelshanley.vendor="Michael Shanley"
 
 ENV LC_ALL=C.UTF-8
 ENV LANG=C.UTF-8

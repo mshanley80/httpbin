@@ -1,6 +1,7 @@
 env/
 build/
 dist/
+httpbin.egg-info
 .eggs/
 .workon
 .epio-app
@@ -9,3 +10,4 @@ dist/
 *.egg-info
 *.swp
 .vscode/
+.idea
