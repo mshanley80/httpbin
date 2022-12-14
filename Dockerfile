@@ -12,7 +12,8 @@ RUN apt update -y && apt install python3-pip git -y && pip3 install --no-cache-d
 
 ADD Pipfile Pipfile.lock /httpbin/
 WORKDIR /httpbin
-RUN /bin/bash -c "pip3 install --no-cache-dir -r <(pipenv lock -r)"
+# RUN /bin/bash -c "pip3 install --no-cache-dir -r <(pipenv lock requirements)"
+RUN pipenv install --deploy
 
 ADD . /httpbin
 RUN pip3 install --no-cache-dir /httpbin

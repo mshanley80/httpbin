@@ -26,7 +26,7 @@ from flask import (
     url_for,
     abort,
 )
-from six.moves import range as xrange
+
 from werkzeug.datastructures import WWWAuthenticate, MultiDict
 from werkzeug.http import http_date
 from werkzeug.wrappers import Response
@@ -1264,7 +1264,7 @@ def drip():
     pause = duration / numbytes
 
     def generate_bytes():
-        for i in xrange(numbytes):
+        for i in range(numbytes):
             yield b"*"
             time.sleep(pause)
 
@@ -1474,7 +1474,7 @@ def stream_random_bytes(n):
     def generate_bytes():
         chunks = bytearray()
 
-        for i in xrange(n):
+        for i in range(n):
             chunks.append(random.randint(0, 255))
             if len(chunks) == chunk_size:
                 yield (bytes(chunks))
@@ -1528,8 +1528,8 @@ def range_request(numbytes):
 
     if (
         first_byte_pos > last_byte_pos
-        or first_byte_pos not in xrange(0, numbytes)
-        or last_byte_pos not in xrange(0, numbytes)
+        or first_byte_pos not in range(0, numbytes)
+        or last_byte_pos not in range(0, numbytes)
     ):
         response = Response(
             headers={
@@ -1545,7 +1545,7 @@ def range_request(numbytes):
     def generate_bytes():
         chunks = bytearray()
 
-        for i in xrange(first_byte_pos, last_byte_pos + 1):
+        for i in range(first_byte_pos, last_byte_pos + 1):
 
             # We don't want the resource to change across requests, so we need
             # to use a predictable data generation function
@@ -1602,7 +1602,7 @@ def link_page(n, offset):
     link = "<a href='{0}'>{1}</a> "
 
     html = ["<html><head><title>Links</title></head><body>"]
-    for i in xrange(n):
+    for i in range(n):
         if i == offset:
             html.append("{0} ".format(i))
         else:

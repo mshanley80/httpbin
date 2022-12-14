@@ -11,8 +11,8 @@ import gzip as gzip2
 import zlib
 
 import brotli as _brotli
+import io
 
-from six import BytesIO
 from decimal import Decimal
 from time import time as now
 
@@ -46,7 +46,7 @@ def gzip(f, *args, **kwargs):
     else:
         content = data
 
-    gzip_buffer = BytesIO()
+    gzip_buffer = io.BytesIO()
     gzip_file = gzip2.GzipFile(
         mode='wb',
         compresslevel=4,

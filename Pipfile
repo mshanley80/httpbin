@@ -1,6 +1,7 @@
 [[source]]
 url = "https://pypi.python.org/simple"
 verify_ssl = true
+name = "pypi"
 
 [packages]
 gunicorn = "*"
@@ -10,7 +11,6 @@ gevent = "*"
 Flask = "*"
 meinheld = "*"
 werkzeug = "*"
-six = "*"
 flasgger = "*"
 pyyaml = {git = "https://github.com/yaml/pyyaml.git"}
 
