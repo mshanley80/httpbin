@@ -1,3 +1,3 @@
-include httpbin/VERSION README.md LICENSE AUTHORS test_httpbin.py
-recursive-include httpbin/templates *
-recursive-include httpbin/static *
+include httpbin2022/VERSION README.md LICENSE AUTHORS test_httpbin.py
+recursive-include httpbin2022/templates *
+recursive-include httpbin2022/static *

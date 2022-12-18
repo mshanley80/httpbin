@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-httpbin.filters
+httpbin2022.filters
 ~~~~~~~~~~~~~~~
 
 This module provides response filter decorators.

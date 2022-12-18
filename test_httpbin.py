@@ -10,8 +10,8 @@ from werkzeug.http import parse_dict_header
 from hashlib import md5, sha256, sha512
 from six import BytesIO
 
-import httpbin
-from httpbin.helpers import parse_multi_value_header
+import httpbin2022
+from httpbin2022.helpers import parse_multi_value_header
 
 
 @contextlib.contextmanager
@@ -111,8 +111,8 @@ class HttpbinTestCase(unittest.TestCase):
     """Httpbin tests"""
 
     def setUp(self):
-        httpbin.app.debug = True
-        self.app = httpbin.app.test_client()
+        httpbin2022.app.debug = True
+        self.app = httpbin2022.app.test_client()
 
     def test_index(self):   
         response = self.app.get('/', headers={'User-Agent': 'test'})
@@ -181,7 +181,7 @@ class HttpbinTestCase(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_post_body_text(self):
-        with open('httpbin/core.py') as f:
+        with open('httpbin2022/core.py') as f:
             response = self.app.post('/post', data={"file": f.read()})
         self.assertEqual(response.status_code, 200)
 
@@ -344,7 +344,7 @@ class HttpbinTestCase(unittest.TestCase):
         response = self.app.get(
             '/digest-auth/auth/user/passwd/MD5',
             environ_base={
-                # httpbin's digest auth implementation uses the remote addr to
+                # httpbin2022's digest auth implementation uses the remote addr to
                 # build the nonce
                 'REMOTE_ADDR': '127.0.0.1',
             },
@@ -448,7 +448,7 @@ class HttpbinTestCase(unittest.TestCase):
         return self.app.get(
             uri,
             environ_base={
-                # httpbin's digest auth implementation uses the remote addr to
+                # httpbin2022's digest auth implementation uses the remote addr to
                 # build the nonce
                 'REMOTE_ADDR': '127.0.0.1',
             },

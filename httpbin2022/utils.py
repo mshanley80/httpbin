@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-httpbin.utils
+httpbin2022.utils
 ~~~~~~~~~~~~~~~
 
 Utility functions.

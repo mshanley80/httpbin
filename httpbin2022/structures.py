@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 
 """
-httpbin.structures
+httpbin2022.structures
 ~~~~~~~~~~~~~~~~~~~
 
-Data structures that power httpbin.
+Data structures that power httpbin2022.
 """
 
 

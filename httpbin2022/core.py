@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-httpbin.core
+httpbin2022.core
 ~~~~~~~~~~~~
 
 This module provides the core HttpBin experience.
@@ -96,8 +96,8 @@ template = {
         "title": "httpbin2022",
         "description": (
             "A simple HTTP Request & Response Service."
-            "<br/> <br/> <b>Run locally: </b> <code>$ python3 httpbin/core.py --port 8080 --host 0.0.0.0</code> adjust port and host as needed"
-            "<br/> <br/> <b>Run locally in docker: </b> <code>$ docker run -p 80:80 mshanley80/httpbin</code> where -p is docker_port:application_port"
+            "<br/> <br/> <b>Run locally: </b> <code>$ python3 httpbin2022/core.py --port 8080 --host 0.0.0.0</code> adjust port and host as needed"
+            "<br/> <br/> <b>Run locally in docker: </b> <code>$ docker run -p 80:80 mshanley80/httpbin2022</code> where -p is docker_port:application_port"
         ),
         "version": version,
     },

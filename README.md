@@ -8,16 +8,16 @@ Updated by [Michael Shanley](https://github.com/mshanley80/httpbin)
 
 Run locally:
 ```shell
-cd to httpbin code root
+cd to httpbin2022 code root
 pip3 install .
-python3 httpbin/core.py --port <port> --host <host>
+python3 httpbin2022/core.py --port <port> --host <host>
 Example:
-python3 httpbin/core.py --port 8080 --host 0.0.0.0
+python3 httpbin2022/core.py --port 8080 --host 0.0.0.0
 ```
 Run in docker:
 ```sh
-docker pull mshanley80/httpbin
-docker run -p 80:80 mshanley80/httpbin 
+docker pull mshanley80/httpbin2022
+docker run -p 80:80 mshanley80/httpbin2022 
 where -p is docker_port:application_port
 ```
 

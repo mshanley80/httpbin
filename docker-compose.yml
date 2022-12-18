@@ -1,6 +1,6 @@
 version: '2'
 services:
-    httpbin:
+    httpbin2022:
       build: '.'
       ports:
         - '80:80'

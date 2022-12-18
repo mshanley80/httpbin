@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 
 """
-httpbin.helpers
+httpbin2022.helpers
 ~~~~~~~~~~~~~~~
 
-This module provides helper functions for httpbin.
+This module provides helper functions for httpbin2022.
 """
 
 import json
