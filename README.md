@@ -3,7 +3,7 @@
 
 A [Kenneth Reitz](hhttp://httpbin.org ) Project.
 
-Updated by [Michael Shanley](https://github.com/mshanley80/httpbin)
+Updated by [Michael Shanley](https://github.com/mshanley80/httpbin2022)
 
 
 Run locally:
