@@ -33,8 +33,10 @@ from werkzeug.wrappers import Response
 from werkzeug.http import parse_authorization_header
 from flasgger import Swagger, NO_SANITIZER
 
-import filters
-from helpers import (
+# import filters
+from . import filters
+
+from . helpers import (
      get_headers,
      status_code,
      get_dict,
@@ -49,8 +51,8 @@ from helpers import (
      next_stale_after_value,
      digest_challenge_response,
 )
-from utils import weighted_choice
-from structures import CaseInsensitiveDict
+from . utils import weighted_choice
+from . structures import CaseInsensitiveDict
 
 with open(
     os.path.join(os.path.realpath(os.path.dirname(__file__)), "VERSION")
