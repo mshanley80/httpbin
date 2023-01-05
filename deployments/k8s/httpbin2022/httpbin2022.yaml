@@ -1,5 +1,5 @@
 ##################################################################################################
-# httpbin2022 service running on port 80 inside the container, and exposing port 80 on the host
+# httpbin2022 service running on port 80 inside the container, with port 80 exposed on the host
 ##################################################################################################
 apiVersion: v1
 kind: ServiceAccount

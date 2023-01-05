@@ -52,11 +52,14 @@ helm install httpbin2022 mshanley80/httpbin2022 \
 
 ### Deploy with ingress
 You can run this as a script to deploy an ingress controller, httpbin2022, and ingress
+Httpbin2022 and the ingress are deployed in namespace httpbin
 ```shell
 # deploy ingress controller
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
 # wait for this to finish before proceeding
 kubectl -n ingress-nginx rollout status deployment/ingress-nginx-controller
-helm install httpbin2022 mshanley80/httpbin2022
-
+helm install httpbin2022 mshanley80/httpbin2022 \
+  --namespace httpbin \
+  --create-namespace
+kubectl apply -n httpbin -f https://raw.githubusercontent.com/mshanley80/httpbin2022/master/deployments/k8s/httpbin2022/httpbin2022-ingress.yaml
 ```
