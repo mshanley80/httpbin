@@ -12,12 +12,12 @@ Docker base image is Ubuntu 20.04
 
 Run locally:
 ```shell
-cd to httpbin2022 code root
+cd httpbin2022 # code root
 pip3 install .
 python3 -m httpbin2022/core.py --port <port> --host <host>
-Example:
+# Example:
 python3 -m httpbin2022/core.py --port 8080 --host 0.0.0.0
-If you do not specify a host and/or port, they default to port 5000 and host 0.0.0.0
+# If you do not specify a host and/or port, they default to port 5000 and host 0.0.0.0
 ```
 Run in docker:
 ```sh
@@ -43,6 +43,3 @@ docker run -p 80:8080 -e PORT=8080 -e HOST=0.0.0.0 mshanley80/httpbin2022
 
 - See the original project http://httpbin.org for additional information.
 
-## SEE ALSO
-
-- https://github.com/mshanley80/httpbin2022

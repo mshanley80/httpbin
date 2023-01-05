@@ -11,12 +11,10 @@ image:
   # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"
 
-# uncomment to override host and/or port gunicorn/httpbin will use in the container
-env: []
-#  - name: PORT
-#    value: "8080"
-#  - name: HOST
-#    value: "0.0.0.0"
+# override these to set host and/or port gunicorn/httpbin will use in the container
+env:
+  PORT: 80
+  HOST: 0.0.0.0
 
 imagePullSecrets: []
 nameOverride: ""
