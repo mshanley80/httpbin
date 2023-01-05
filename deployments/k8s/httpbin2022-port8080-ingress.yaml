@@ -1,5 +1,5 @@
 ##################################################################################################
-# httpbin2022 ingress using port 80 into the container
+# httpbin2022 ingress using port 8080 into the container (your local port is still 80 to access the service)
 ##################################################################################################
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -16,4 +16,4 @@ spec:
           service:
             name: httpbin2022
             port:
-              number: 80
+              number: 8080

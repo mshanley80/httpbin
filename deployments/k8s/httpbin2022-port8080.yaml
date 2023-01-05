@@ -1,5 +1,5 @@
 ##################################################################################################
-# httpbin2022 service running on port 80 inside the container, and exposing port 80 on the host
+# httpbin2022 service running on port 8080 inside the container. Ingress is still port 80
 ##################################################################################################
 apiVersion: v1
 kind: ServiceAccount
@@ -14,10 +14,11 @@ metadata:
     app: httpbin2022
     service: httpbin2022
 spec:
+  type: ClusterIP
   ports:
   - name: http
-    port: 80
-    targetPort: 80
+    port: 8080
+    targetPort: 8080
   selector:
     app: httpbin2022
 ---
@@ -43,4 +44,14 @@ spec:
         imagePullPolicy: IfNotPresent
         name: httpbin2022
         ports:
-        - containerPort: 80
+        - containerPort: 8080
+        env:
+        # This tells httpbin to run on 8080 in the container
+        - name: PORT
+          value: "8080"
+        # This tells httpbin bind to 0.0.0.0 in the container.
+        # This is the default binding, but is shown here just for an example.
+        - name: HOST
+          value: "0.0.0.0"
+
+
